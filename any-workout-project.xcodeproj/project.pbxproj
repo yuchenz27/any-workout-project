@@ -11,6 +11,13 @@
 		4B023A7A27F3110700DA100B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B023A7927F3110700DA100B /* ContentView.swift */; };
 		4B023A7C27F3110800DA100B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B023A7B27F3110800DA100B /* Assets.xcassets */; };
 		4B023A7F27F3110800DA100B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B023A7E27F3110800DA100B /* Preview Assets.xcassets */; };
+		4B4B740228014FCB0004D41E /* WorkoutRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4B740128014FCB0004D41E /* WorkoutRow.swift */; };
+		4B935E48280148550068887A /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B935E47280148550068887A /* Workout.swift */; };
+		4B935E4A280149B50068887A /* WorkoutList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B935E49280149B40068887A /* WorkoutList.swift */; };
+		4B935E4C28014A140068887A /* WorkoutDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B935E4B28014A140068887A /* WorkoutDetail.swift */; };
+		4BDBCC06280154CD0084B544 /* CreateWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDBCC05280154CD0084B544 /* CreateWorkout.swift */; };
+		4BDBCC08280156C00084B544 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDBCC07280156C00084B544 /* Exercise.swift */; };
+		4BDBCC0C2801581D0084B544 /* ExerciseRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDBCC0B2801581D0084B544 /* ExerciseRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +26,13 @@
 		4B023A7927F3110700DA100B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4B023A7B27F3110800DA100B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B023A7E27F3110800DA100B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4B4B740128014FCB0004D41E /* WorkoutRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutRow.swift; sourceTree = "<group>"; };
+		4B935E47280148550068887A /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		4B935E49280149B40068887A /* WorkoutList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutList.swift; sourceTree = "<group>"; };
+		4B935E4B28014A140068887A /* WorkoutDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetail.swift; sourceTree = "<group>"; };
+		4BDBCC05280154CD0084B544 /* CreateWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWorkout.swift; sourceTree = "<group>"; };
+		4BDBCC07280156C00084B544 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		4BDBCC0B2801581D0084B544 /* ExerciseRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +65,10 @@
 		4B023A7627F3110700DA100B /* any-workout-project */ = {
 			isa = PBXGroup;
 			children = (
+				4B935E46280148400068887A /* Model */,
+				4B935E452801483C0068887A /* Views */,
+				4B935E442801482D0068887A /* Data */,
 				4B023A7727F3110700DA100B /* any_workout_projectApp.swift */,
-				4B023A7927F3110700DA100B /* ContentView.swift */,
 				4B023A7B27F3110800DA100B /* Assets.xcassets */,
 				4B023A7D27F3110800DA100B /* Preview Content */,
 			);
@@ -65,6 +81,43 @@
 				4B023A7E27F3110800DA100B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4B4B740028014FBC0004D41E /* Workout */ = {
+			isa = PBXGroup;
+			children = (
+				4B935E49280149B40068887A /* WorkoutList.swift */,
+				4B935E4B28014A140068887A /* WorkoutDetail.swift */,
+				4B4B740128014FCB0004D41E /* WorkoutRow.swift */,
+				4BDBCC05280154CD0084B544 /* CreateWorkout.swift */,
+				4BDBCC0B2801581D0084B544 /* ExerciseRow.swift */,
+			);
+			path = Workout;
+			sourceTree = "<group>";
+		};
+		4B935E442801482D0068887A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		4B935E452801483C0068887A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4B4B740028014FBC0004D41E /* Workout */,
+				4B023A7927F3110700DA100B /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4B935E46280148400068887A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4B935E47280148550068887A /* Workout.swift */,
+				4BDBCC07280156C00084B544 /* Exercise.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +191,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B023A7A27F3110700DA100B /* ContentView.swift in Sources */,
+				4BDBCC0C2801581D0084B544 /* ExerciseRow.swift in Sources */,
+				4BDBCC08280156C00084B544 /* Exercise.swift in Sources */,
 				4B023A7827F3110700DA100B /* any_workout_projectApp.swift in Sources */,
+				4B935E48280148550068887A /* Workout.swift in Sources */,
+				4B935E4C28014A140068887A /* WorkoutDetail.swift in Sources */,
+				4B4B740228014FCB0004D41E /* WorkoutRow.swift in Sources */,
+				4B935E4A280149B50068887A /* WorkoutList.swift in Sources */,
+				4BDBCC06280154CD0084B544 /* CreateWorkout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
