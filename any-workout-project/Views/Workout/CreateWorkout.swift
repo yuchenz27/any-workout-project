@@ -42,52 +42,103 @@ struct ExerciseDetail: View {
     // presentationMode.wrappedValue.dismiss()
     
     @State var exerciseName: String = ""
-    @State var hours: Int = 0
-    @State var minutes: Int = 0
-    @State var seconds: Int = 0
+    
+    @State var hourSelection: Int = 0
+    @State var minuteSelection: Int = 0
+    @State var secondSelection: Int = 0
+    
+    let hours = [Int](0..<24)
+    let minutes = [Int](0..<60)
+    let seconds = [Int](0..<60)
+    
     var exercise: Exercise?
     
     var body: some View {
-        ZStack {
-            Color.pink
-            
-            VStack {
-                Text("Exercise Name")
-                TextField("Type the name here...", text: $exerciseName)
-                    .padding()
-                    .background(Color.gray.opacity(0.3).cornerRadius(10))
-                    .foregroundColor(.white)
-                    .font(.headline)
-                
-                Text("Exercise Duration")
-                HStack {
-                    // Hours
-                    Picker(selection: $hours, label: Text("Hours")) {
-                        ForEach(0..<25) { num in
-                            Text("\(num)").tag(num)
-                        }
+//        ZStack {
+//            Color.pink
+//                .ignoresSafeArea(.all)
+//
+//            VStack {
+//                Text("Exercise Name")
+//                TextField("Type the name here...", text: $exerciseName)
+//                    .padding()
+//                    .background(Color.gray.opacity(0.3).cornerRadius(10))
+//                    .foregroundColor(.white)
+//                    .font(.headline)
+//
+//                Text("Exercise Duration")
+//                GeometryReader { geometry in
+//                    HStack() {
+//                        Spacer()
+//
+//                        Picker(selection: $hourSelection, label: Text("")){
+//                            ForEach(0..<self.hours.count, id: \.self) { index in
+//                                Text("\(self.hours[index]) h").tag(index)
+//                            }
+//                        }
+//                        .pickerStyle(.inline)
+//                        .frame(width: geometry.size.width / 3, height: 100)
+//                        .clipped()
+//
+//                        Picker(selection: $minuteSelection, label: Text("")){
+//                            ForEach(0..<self.minutes.count, id: \.self) { index in
+//                                Text("\(self.minutes[index]) m").tag(index)
+//                            }
+//                        }
+//                        .pickerStyle(.inline)
+//                        .frame(width: geometry.size.width / 3, height: 100)
+//                        .clipped()
+//
+//                        Picker(selection: $secondSelection, label: Text("")){
+//                            ForEach(0..<self.seconds.count, id: \.self) { index in
+//                                Text("\(self.seconds[index]) s").tag(index)
+//                            }
+//                        }
+//                        .pickerStyle(.inline)
+//                        .frame(width: geometry.size.width / 3, height: 100)
+//                        .clipped()
+//
+//                        Spacer()
+//                    }
+//                }
+//            }
+//        }
+        
+        GeometryReader { geometry in
+            HStack() {
+                Spacer()
+                Picker(selection: $hourSelection, label: Text("")){
+                    ForEach(0..<self.hours.count, id: \.self) { index in
+                        Text("\(self.hours[index]) h").tag(index)
                     }
-                    .pickerStyle(.wheel)
-//                    // Minutes
-//                    Picker(selection: $minutes, label: Text("Minutes")) {
-//                        ForEach(0..<60) { num in
-//                            Text("\(num)").tag(num)
-//                        }
-//                    }
-//                    .pickerStyle(.wheel)
-//                    // Seconds
-//                    Picker(selection: $seconds, label: Text("Seconds")) {
-//                        ForEach(0..<60) { num in
-//                            Text("\(num)").tag(num)
-//                        }
-//                    }
-//                    .pickerStyle(.wheel)
                 }
+                .pickerStyle(.inline)
+                .frame(width: geometry.size.width / 4, height: 100)
+                .compositingGroup()
+                .clipped(antialiased: true)
                 
+                Picker(selection: $minuteSelection, label: Text("")){
+                    ForEach(0..<self.minutes.count, id: \.self) { index in
+                        Text("\(self.minutes[index]) m").tag(index)
+                    }
+                }
+                .pickerStyle(.inline)
+                .frame(width: geometry.size.width / 4, height: 100)
+                .compositingGroup()
+                .clipped(antialiased: true)
                 
-
+                Picker(selection: $secondSelection, label: Text("")){
+                    ForEach(0..<self.seconds.count, id: \.self) { index in
+                        Text("\(self.seconds[index]) s").tag(index)
+                    }
+                }
+                .pickerStyle(.inline)
+                .frame(width: geometry.size.width / 4, height: 100)
+                .compositingGroup()
+                .clipped(antialiased: true)
+                
+                Spacer()
             }
-            .padding()
         }
     }
 }
